@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mystery Maze</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <h1>Mystery Maze</h1>
+
+        <div id="hud">
+            <div class="stat-box">Klíče: <span id="keys-display" aria-live="polite">0/3</span></div>
+            <div class="stat-box">Čas: <span id="time-display" aria-live="polite">00:00</span></div>
+            <div class="stat-box">
+                Rekord: <span id="best-time-display" aria-live="polite">--:--</span>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+
+            <div id="start-screen" class="overlay">
+                <h2>Vítejte v Bludišti</h2>
+                <p>Najděte 3 klíče a dostaňte se k východu.</p>
+                <p style="color: #ff5e78; font-weight: bold">
+                    Pozor: Pasti se pravidelně vysouvají a zasouvají! Přejděte, když jsou tmavé.
+                </p>
+                <button id="btn-start">Nová hra</button>
+            </div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2 id="end-title">Vyhrál jsi!</h2>
+                <p id="end-message">Tvůj čas: 12s</p>
+                <button id="btn-restart">Hrát znovu</button>
+            </div>
+        </div>
+
+        <div id="controls">
+            <div
+                class="ctrl-btn"
+                style="grid-area: up"
+                id="btn-up"
+                role="button"
+                aria-label="Up"
+                tabindex="0"
+            >
+                ↑
+            </div>
+            <div
+                class="ctrl-btn"
+                style="grid-area: left"
+                id="btn-left"
+                role="button"
+                aria-label="Left"
+                tabindex="0"
+            >
+                ←
+            </div>
+            <div
+                class="ctrl-btn"
+                style="grid-area: down"
+                id="btn-down"
+                role="button"
+                aria-label="Down"
+                tabindex="0"
+            >
+                ↓
+            </div>
+            <div
+                class="ctrl-btn"
+                style="grid-area: right"
+                id="btn-right"
+                role="button"
+                aria-label="Right"
+                tabindex="0"
+            >
+                →
+            </div>
+        </div>
+        <script type="module" src="./js/game.js"></script>
+    </body>
+</html>
